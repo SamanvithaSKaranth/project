@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
-  validates :title, presence:true, length:{minimum:2,maximum:20}
-  validates :description, presence:true, length:{minimum:2,maximum:20}
+  belongs_to :user
+  validates :title, presence: true, length: {minimum: 2, maximum: 20}
+  validates :description, presence: true, length: {minimum: 2, maximum: 20}
+  validates :user_id, presence:true
 end
