@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   VALID_EMAIL_PATTERN = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 25},
             format: {with: VALID_EMAIL_PATTERN}
+  has_secure_password
 
 end
